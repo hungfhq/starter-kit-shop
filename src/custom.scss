@@ -1,0 +1,43 @@
+// Custom scss
+$color_text_main: #888;
+body {
+  font: normal 12px/18px "Ubuntu", sans-serif;
+  color: $color_text_main;
+}
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    padding-top: 50px;
+  }
+  .navigation-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+  }
+}
+
+.box-heading {
+  height: 50px;
+  background: #19caaf;
+  color: #fff;
+  padding-top: 11px;
+  padding-left: 17px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.height-25 {
+  height: 25px !important;
+}

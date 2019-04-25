@@ -1,0 +1,42 @@
+.header {
+  background: #f2f2f2;
+  width: 100%;
+}
+
+//  Circle list icon
+.circle {
+  height: 38px;
+  width: 38px;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  display: inline-block;
+  padding: 10px;
+  margin-right: 6px;
+  margin-top: 20px;
+  font-size: 1.5em;
+  &:hover {
+    background: #777;
+    color: #fff;
+    cursor: pointer;
+    i {
+      color: #fff;
+    }
+  }
+  i {
+    color: #c2c2c2;
+  }
+}
+.circle-active {
+  height: 38px;
+  width: 38px;
+  background-color: #19caaf;
+  border-radius: 50%;
+  display: inline-block;
+  padding: 10px;
+  margin-right: 6px;
+  margin-top: 20px;
+  font-size: 1.5em;
+  i {
+    color: #fff;
+  }
+}

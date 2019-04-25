@@ -1,0 +1,187 @@
+<header class="header">
+  <div class="container">
+    <ul class="top-list float-right">
+      <li class="top-list-item">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+      </li>
+      <li class="top-list-item">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </li>
+      <li class="top-list-item">
+        <a href="#"><i class="fab fa-google-plus"></i></a>
+      </li>
+      <li class="top-list-item">
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </li>
+      <li>
+        <div ngbDropdown class="d-inline-block" placement="bottom-right">
+          <a id="dropdownBasic1" ngbDropdownToggle> $ <i class="fa fa-angle-down"></i> </a>
+          <div ngbDropdownMenu>
+            <a class="dropdown-item" href="#">€ Euro</a>
+            <a class="dropdown-item" href="#">$ USD</a>
+            <a class="dropdown-item" href="#">¥ JPY</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div ngbDropdown class="d-inline-block" placement="bottom-right">
+          <a id="dropdownBasic1" ngbDropdownToggle> En <i class="fa fa-angle-down"></i> </a>
+          <div ngbDropdownMenu>
+            <a class="dropdown-item" href="#">English</a>
+            <a class="dropdown-item" href="#">Vietnamese</a>
+            <a class="dropdown-item" href="#">French</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="clearfix"></div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-xs-6">
+        <a href="#"><img class="logo" src="../assets/img/logo.png"/></a>
+      </div>
+
+      <div class="col-sm-5 col-xs-6">
+        <!-- <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2" />
+          <span class="input-group-addon" id="basic-addon2">Search</span>
+        </div> -->
+      </div>
+      <div class="col-sm-3">
+        <div class="float-right">
+          <a class="phone" href=""><i class="fa fa-phone fa-rotate-90"></i></a>
+          <span class="phone-number">800-2345-6789</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="box-heading">
+          <h5><i class="d-none d-sm-inline fas fa-bars"></i> Dashboard</h5>
+        </div>
+      </div>
+
+      <div class="col-sm-9">
+        <div class="navigation-bar">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu">
+              <span class="navbar-toggler-icon height-25"></span>
+            </button>
+            <div id="navbar-menu" class="collapse navbar-collapse">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link ml-2" [routerLink]="['/shop']"> <i class="fa fa-home"></i> Home </a>
+
+                <a class="nav-item nav-link ml-2" [routerLink]="['/wishlist']">
+                  <i class="fa fa-star"></i> Wish List
+                </a>
+                <a class="nav-item nav-link ml-2"> <i class="fa fa-shopping-cart"></i> Shopping Cart </a>
+                <a class="nav-item nav-link ml-2"> <i class="fa fa-check-square"></i> Checkout </a>
+                <div
+                  class="nav-item"
+                  ngbDropdown
+                  placement="bottom-right"
+                  [hidden]="!this.authenticationService.credentials"
+                >
+                  <a id="wl-dropdown" class="nav-item nav-link ml-2" ngbDropdownToggle>
+                    <i class="fa fa-address-book"></i> Logout <i class="fa fa-angle-down"></i>
+                  </a>
+                  <div ngbDropdownMenu aria-labelledby="wl-dropdown">
+                    <h6 class="dropdown-header">
+                      <span>Logged in as </span>
+                      <span class="text-danger">{{ this.authenticationService.credentials?.username }}</span>
+                    </h6>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" (click)="logout()">Logout</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <!-- Account menu-left -->
+      <div class="hidden-xs">
+        <div class="header heading-left-menu">
+          <p>
+            Hello <span class="text-danger">{{ username }}</span>
+            <span class="text-success" [hidden]="!this.authenticationService.credentials"
+              >({{ service.editableUser?.wishlist.length }})</span
+            >
+          </p>
+        </div>
+        <div class="header">
+          <ul>
+            <li class="cat-item">
+              <a href=""><i class="fas fa-angle-right"></i>My Profile</a>
+            </li>
+            <li class="cat-item">
+              <a href=""><i class="fas fa-angle-right"></i>Address Book</a>
+            </li>
+            <li class="cat-item">
+              <a href=""><i class="fas fa-angle-right"></i>My Payment Options</a>
+            </li>
+            <li class="cat-item">
+              <a href=""><i class="fas fa-angle-right"></i>Vouchers</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="header heading-left-menu">
+          <p>My Orders</p>
+        </div>
+        <div class="header">
+          <ul>
+            <li class="cat-item">
+              <a href=""><i class="fas fa-angle-right"></i>My Returns</a>
+            </li>
+            <li class="cat-item">
+              <a href=""><i class="fas fa-angle-right"></i>My Cancellations</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-9">
+      <!-- main-contain  -->
+      <div class="p-4">
+        <div class="row border-bottom my-2 p-2" *ngFor="let product of wishlist">
+          <div class="col-2">
+            <img class="img-fluid" src="{{ product?.img_url }}" />
+          </div>
+          <div class="col-5">
+            <a class="text-danger" [routerLink]="['/shop', product?.clink, product?.blink, product?.link]">{{
+              product?.link
+            }}</a>
+            <p>{{ product?.dsc }}</p>
+            <a
+              (mouseenter)="service.getProductById(product.pid)"
+              (click)="service.toggleWishlistButton2(this.service.editableUser.uid, product.pid)"
+              [routerLink]="['/wishlist']"
+              ><i class="fa fa-trash fa-2x"></i
+            ></a>
+          </div>
+          <div class="col-2 py-3">
+            <h6 class="text-center text-success">{{ product?.price }}</h6>
+          </div>
+          <div class="col-3 py-3">
+            <a data-toggle="tooltip" title="add to cart"><i class="fa fa-cart-plus fa-2x"></i> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end main-row -->
+</div>
+<footer class="header"></footer>

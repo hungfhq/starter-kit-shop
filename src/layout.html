@@ -1,0 +1,138 @@
+<header>
+  <div class="container">
+    <ul class="top-list float-right">
+      <li class="top-list-item">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+      </li>
+      <li class="top-list-item">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </li>
+      <li class="top-list-item">
+        <a href="#"><i class="fab fa-google-plus"></i></a>
+      </li>
+      <li class="top-list-item">
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </li>
+      <li>
+        <div ngbDropdown class="d-inline-block" placement="bottom-right">
+          <a id="dropdownBasic1" ngbDropdownToggle> $ <i class="fa fa-angle-down"></i> </a>
+          <div ngbDropdownMenu>
+            <a class="dropdown-item" href="#">€ Euro</a>
+            <a class="dropdown-item" href="#">$ USD</a>
+            <a class="dropdown-item" href="#">¥ JPY</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div ngbDropdown class="d-inline-block" placement="bottom-right">
+          <a id="dropdownBasic1" ngbDropdownToggle> En <i class="fa fa-angle-down"></i> </a>
+          <div ngbDropdownMenu>
+            <a class="dropdown-item" href="#">English</a>
+            <a class="dropdown-item" href="#">Vietnamese</a>
+            <a class="dropdown-item" href="#">French</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="clearfix"></div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-xs-6">
+        <a href="#"><img class="logo" src="../assets/img/logo.png"/></a>
+      </div>
+
+      <div class="col-sm-5 col-xs-6">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search" aria-describedby="basic-addon2" />
+          <span class="input-group-addon" id="basic-addon2">Search</span>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="float-right hidden-xs">
+          <a class="phone" href=""><i class="fa fa-phone fa-rotate-90"></i></a>
+          <span class="phone-number">800-2345-6789</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3"></div>
+
+      <div class="col-sm-9">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <button class="navbar-toggler" type="button" aria-controls="navbar-menu" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div id="navbar-menu" class="collapse navbar-inverse navbar-collapse float-xs-none">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link"> <i class="fa fa-home"></i> Home </a>
+              <a class="nav-item nav-link"> <i class="fa fa-address-book"></i> My Account </a>
+              <a class="nav-item nav-link"> <i class="fa fa-shopping-cart"></i> Shopping Cart </a>
+              <a class="nav-item nav-link"> <i class="fa fa-check-square"></i> Checkout </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="box-heading">
+        <h4><i class="fas fa-bars hidden-xs"></i> Categories</h4>
+      </div>
+      <div class="header">
+        <!-- show categories from data -->
+        <ul>
+          <li class="cat-item" *ngFor="let category of service.getData().categories">
+            <a [routerLink]="['/shop', category.link]">{{ category.link | titlecase }}s</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Account menu-left -->
+      <div class="hidden-xs">
+        <div class="header heading-left-menu">
+          <p>Account</p>
+        </div>
+        <div class="header">
+          <ul>
+            <li class="cat-item">
+              <a href=""><i class="fas fa-angle-right"></i>Login</a>
+            </li>
+            <li class="cat-item">
+              <a href=""><i class="fas fa-angle-right"></i>Register</a>
+            </li>
+            <li class="cat-item">
+              <a href=""><i class="fas fa-angle-right"></i>Forgotten Password</a>
+            </li>
+            <li class="cat-item">
+              <a href=""><i class="fas fa-angle-right"></i>My Account</a>
+            </li>
+            <li class="cat-item">
+              <a href=""><i class="fas fa-angle-right"></i>Address Book</a>
+            </li>
+            <li class="cat-item">
+              <a href=""><i class="fas fa-angle-right"></i>Wish List</a>
+            </li>
+            <li class="cat-item">
+              <a href=""><i class="fas fa-angle-right"></i>Order History</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-9">
+      <!-- main-contain -->
+
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <!-- end main-row -->
+</div>
